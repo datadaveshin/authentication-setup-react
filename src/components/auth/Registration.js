@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios';
 
 export default class Registration extends Component {
   constructor(props) {
@@ -22,9 +23,15 @@ export default class Registration extends Component {
 
   // Placeholder for handleSubmit
   handleSubmit(event) {
-    console.log("form submitted");
-    // keep form from behaving like an html form,
-    // just want method to be called
+    axios.post("http://localhost:3001/registrations",
+      {user: {
+        email: this.state.email,
+        password: this.state.password,
+        password_confirmation: this.state.password_confirmation
+        }
+      }
+    )
+    console.log("submitted!");
     event.preventDefault();
   }
 
