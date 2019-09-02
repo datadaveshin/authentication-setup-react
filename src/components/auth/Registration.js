@@ -30,7 +30,9 @@ export default class Registration extends Component {
 
   // Placeholder for handleChange
   handleChange(event) {
-    console.log("handle change", event);
+    this.setState({
+      [event.target.name]: event.target.value
+    });
   }
 
   render() {
