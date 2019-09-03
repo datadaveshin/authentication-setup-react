@@ -23,15 +23,25 @@ export default class Registration extends Component {
 
   // Placeholder for handleSubmit
   handleSubmit(event) {
+    const {
+      email,
+      password,
+      password_confirmation
+    } = this.state;
+
     axios.post("http://localhost:3001/registrations",
       {user: {
-        email: this.state.email,
-        password: this.state.password,
-        password_confirmation: this.state.password_confirmation
+        email: email,
+        password: password,
+        password_confirmation: password_confirmation
         }
-      }
-    )
-    console.log("submitted!");
+      },
+      { withCredentials: true } // Tells api that it's ok to set the cookie in or client
+    ).then(response => {
+      console.log("registration res", response);
+    }).catch(error => {
+      console.log("registration error", error);
+    });
     event.preventDefault();
   }
 
