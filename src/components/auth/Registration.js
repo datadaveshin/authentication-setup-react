@@ -38,7 +38,9 @@ export default class Registration extends Component {
       },
       { withCredentials: true } // Tells api that it's ok to set the cookie in or client
     ).then(response => {
-      console.log("registration res", response);
+      if (response.data.status === 'created') {
+        this.props.handleSuccessfulAuth(response.data);
+      }
     }).catch(error => {
       console.log("registration error", error);
     });
