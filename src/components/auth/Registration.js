@@ -21,6 +21,13 @@ export default class Registration extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  // Placeholder for handleChange
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  }
+
   // Placeholder for handleSubmit
   handleSubmit(event) {
     const {
@@ -47,17 +54,8 @@ export default class Registration extends Component {
     event.preventDefault();
   }
 
-  // Placeholder for handleChange
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
-
   render() {
     return (
-      // Add form with submit handler
-      // Make email, password holders, with html validations
       <form onSubmit={this.handleSubmit}>
         <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} required>
         </input>
