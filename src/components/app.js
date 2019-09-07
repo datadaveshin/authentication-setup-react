@@ -10,7 +10,7 @@ export default class App extends Component {
 
     this.state = {
       loggedInStatus: "NOT_LOGGED_IN",
-      user: {email: ""}
+      user: {}
     }
 
     this.handleLogin = this.handleLogin.bind(this);
