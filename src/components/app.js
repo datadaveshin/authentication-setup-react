@@ -10,7 +10,7 @@ export default class App extends Component {
 
     this.state = {
       loggedInStatus: "NOT_LOGGED_IN",
-      user: {}
+      user: {email: ""}
     }
 
     this.handleLogin = this.handleLogin.bind(this);
@@ -22,7 +22,7 @@ export default class App extends Component {
       if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN") {
         this.setState({
           loggedInStatus: "LOGGED_IN",
-          email: response.data.user.email
+          user: response.data.user
         })
       } else if (!response.data.logged_in && this.state.loggedInStatus === 'LOGGED_IN'){
         this.setState({
@@ -70,7 +70,7 @@ export default class App extends Component {
               path={"/dashboard"}
               render={props=>(
                 <Dashboard {...props} loggedInStatus={this.state.loggedInStatus}
-                                      email={this.state.email}
+                                      user={this.state.user}
                 />
               )}/>
           </Switch>
