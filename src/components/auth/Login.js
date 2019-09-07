@@ -47,9 +47,24 @@ export default class Login extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="email" name="email" placeholder="Email" value={this.state.email} onChange={this.handleChange} required>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={this.state.email}
+          onChange={this.handleChange}
+          autoComplete="username"
+          required>
         </input>
-        <input type="password" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} required>
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={this.state.password}
+          onChange={this.handleChange}
+          autoComplete="current-password"
+          required>
         </input>
 
         <button type="submit">Login</button>
