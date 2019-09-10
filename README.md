@@ -1,6 +1,6 @@
 # React authentication frontend starter
 
-This is a React starter set up that hits routes for registering a user on a [Ruby on Rails backend API]https://github.com/datadaveshin/authentication-setup-rails-api. It allows users to log in and out using http cookies.
+This is a React starter set up that hits routes for registering a user on a [Ruby on Rails backend API](https://github.com/datadaveshin/authentication-setup-rails-api). It allows users to log in and out using http cookies.
 It is based on [Jordan Hudgens](https://www.youtube.com/watch?v=z18zLCAg7UU&list=PLgYiyoyNPrv_yNp5Pzsx0A3gQ8-tfg66j&index=1) set up with some mods.
 
 Some differences:
